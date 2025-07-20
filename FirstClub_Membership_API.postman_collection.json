@@ -1,0 +1,675 @@
+{
+	"info": {
+		"_postman_id": "20e14b4a-e7a8-4cb1-94f5-82fb90daa2a5",
+		"name": "FirstClub Membership API",
+		"description": "Test all endpoints and edge cases for FirstClub Membership backend.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36143857"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User (Charlie)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Charlie\",\"email\":\"charlie@example.com\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User (Charlie)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Alice Updated\",\"email\":\"alice.updated@example.com\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User (Charlie)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plans & Tiers",
+			"item": [
+				{
+					"name": "List All Plans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/plans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Tiers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/tiers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"tiers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Benefits for Silver Tier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/tiers/1/benefits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"tiers",
+								"1",
+								"benefits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Benefits for Gold Tier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/tiers/2/benefits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"tiers",
+								"2",
+								"benefits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Benefits for Platinum Tier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/tiers/3/benefits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"tiers",
+								"3",
+								"benefits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Plan-Tier-Benefit Catalog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/catalog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"catalog"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Membership Actions",
+			"item": [
+				{
+					"name": "Subscribe (Alice, Monthly)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":1,\"planId\":1,\"autoRenew\":true,\"paymentMethod\":\"mock\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/subscribe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe (Bob, Quarterly)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":2,\"planId\":2,\"autoRenew\":false,\"paymentMethod\":\"mock\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/subscribe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Status (Alice)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/status?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"status"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Status (Bob)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/status?userId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"status"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upgrade (Alice to Quarterly)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":1,\"targetPlanId\":2}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/upgrade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"upgrade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upgrade (Alice to Yearly)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":1,\"targetPlanId\":3}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/upgrade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"upgrade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Downgrade (Bob to Monthly)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":2,\"targetPlanId\":1}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/downgrade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"downgrade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Downgrade (Bob to Yearly)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":2,\"targetPlanId\":3}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/downgrade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"downgrade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel (Alice)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":1}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel (Bob)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":2}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Renew (Alice)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":1,\"membershipId\":1}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/renew",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"renew"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Renew (Bob)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":2,\"membershipId\":2}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/renew",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"renew"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Edge Cases",
+			"item": [
+				{
+					"name": "Subscribe (Non-existent User)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":100,\"planId\":1,\"autoRenew\":true,\"paymentMethod\":\"mock\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/membership/subscribe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Status (Non-existent User)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/membership/status?userId=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membership",
+								"status"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
