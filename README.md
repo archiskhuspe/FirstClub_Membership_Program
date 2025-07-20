@@ -1,4 +1,4 @@
-# FirstClub Membership Program Backend
+# FirstClub: Membership Program
 
 A modular, tiered, subscription-based membership system for e-commerce, built with Java Spring Boot.
 
